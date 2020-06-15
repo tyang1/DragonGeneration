@@ -25,6 +25,7 @@ class Dragon {
     this.birthday = birthday || DEFAULT_TRAITS.birthday;
     this.traits = traits || DEFAULT_TRAITS.getRandomTraits;
     this.generationId = generationId || DEFAULT_TRAITS.generationId;
+    this.dragonId = null;
   }
 }
 

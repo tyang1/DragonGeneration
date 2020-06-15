@@ -3,14 +3,15 @@ const pool = require("../../databasePool");
 class DragonTable {
   static storeDragon(dragon) {
     return new Promise((resolve, reject) => {
+      const { nickname, birthday, generationId } = dragon;
       pool.query(
-        "INSERT INTO dragon(id, nickname, birthday) VALUES($1, $2, $3) RETURNING generationId",
-        [dragon.id, dragon.nickname, dragon.birthday],
+        `INSERT INTO dragon(nickname, birthday, "generationId") VALUES($1, $2, $3) RETURNING id`,
+        [nickname, birthday, generationId],
         (error, response) => {
           if (error) reject(error);
           console.log("dragon response", response);
-          const generationId = response.rows[0].id;
-          resolve({ generationId });
+          const dragonId = response.rows[0].id;
+          resolve({ dragonId });
         }
       );
     });

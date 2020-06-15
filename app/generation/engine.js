@@ -1,5 +1,6 @@
 const Generation = require("./");
 const GenerationTable = require("./table");
+const DragonTable = require("../dragon/table");
 
 class GenerationEngine {
   constructor() {
