@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./bin/server.js",
+    "db": "nodemon ./databasePool.js",
+    "configure-dev": "npm run configure && npm run dev",
+    "configure": "./bin/configure_db.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.2.1"
+  }
+}
