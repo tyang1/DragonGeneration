@@ -15,6 +15,7 @@ class GenerationEngine {
     clearTimeout(this.timer);
   }
   buildNewGeneration() {
+    //we are keeping the model separate from database concern
     const generation = new Generation();
     GenerationTable.storeGeneration(generation)
       .then(({ generationId }) => {
