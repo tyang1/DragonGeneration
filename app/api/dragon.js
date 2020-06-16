@@ -3,7 +3,7 @@ const DragonTable = require("../dragon/table");
 const app = require("../index.js");
 const router = new Router();
 
-router.get("/new", (req, res) => {
+router.get("/new", (req, res, next) => {
   const dragon = req.app.locals.engine.generation.createDragon();
   DragonTable.storeDragon(dragon)
     .then(({ dragonId }) => {
@@ -11,7 +11,7 @@ router.get("/new", (req, res) => {
       res.json({ dragon });
     })
     .catch((error) => {
-      console.error(error);
+      next(error);
     });
 });
 

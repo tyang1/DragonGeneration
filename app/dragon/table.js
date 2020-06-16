@@ -9,9 +9,13 @@ class DragonTable {
         [nickname, birthday, generationId],
         (error, response) => {
           if (error) reject(error);
-          console.log("dragon response", response);
-          const dragonId = response.rows[0].id;
-          resolve({ dragonId });
+          try {
+            console.log("dragon response", response);
+            const dragonId = response.rows[0].id;
+            resolve({ dragonId });
+          } catch (error) {
+            reject(error);
+          }
         }
       );
     });
