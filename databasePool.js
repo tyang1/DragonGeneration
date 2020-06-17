@@ -19,3 +19,8 @@ pool.query("SELECT * FROM trait", (error, response) => {
   if (error) return console.log("error", error);
   console.log("trait response.rows", response.rows);
 });
+
+pool.query("SELECT * FROM dragonTrait", (error, response) => {
+  if (error) return console.log("error", error);
+  console.log("dragonTrait response.rows", response.rows);
+});

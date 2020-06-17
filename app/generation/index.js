@@ -26,6 +26,9 @@ class Generation {
     const newDragon = new Dragon({ generationId: this.generationId });
     return newDragon;
   }
+  retrieveDragon(dragon){
+
+  }
 }
 
 module.exports = Generation;

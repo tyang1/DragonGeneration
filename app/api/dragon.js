@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const DragonTable = require("../dragon/table");
-const app = require("../index.js");
+// const app = require("../index.js");
 const router = new Router();
 
 router.get("/new", (req, res, next) => {

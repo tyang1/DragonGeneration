@@ -1,4 +1,3 @@
-//here, we want to add
 const pool = require("../../databasePool");
 
 class TraitTable {
@@ -17,10 +16,10 @@ class TraitTable {
   }
 }
 
-// TraitTable.getTraitId({ traitType: "backgroundColor", traitValue: "green" })
-//   .then(({ traitId }) => {
-//     console.log("traitId", traitId);
-//   })
-//   .catch((error) => console.error(error));
+TraitTable.getTraitId({ traitType: "backgroundColor", traitValue: "green" })
+  .then(({ traitId }) => {
+    console.log("traitId", traitId);
+  })
+  .catch((error) => console.error(error));
 
 module.exports = TraitTable;
