@@ -55,8 +55,8 @@ class DragonTable {
   }
 }
 
-DragonTable.getDragon({ dragonId: 1 })
-  .then((dragon) => console.log("the dragon", dragon))
-  .catch((err) => console.log(err));
+// DragonTable.getDragon({ dragonId: 1 })
+//   .then((dragon) => console.log("the dragon", dragon))
+//   .catch((err) => console.log(err));
 
 module.exports = DragonTable;

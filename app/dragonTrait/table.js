@@ -24,7 +24,32 @@ class DragonTraitTable {
       );
     });
   }
+  static getDragonTrait({ dragonId }) {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `SELECT "traitType", "traitValue" 
+         FROM trait 
+         INNER JOIN dragonTrait
+         ON dragonTrait."traitId"=trait.id
+         WHERE dragonTrait."dragonId"=$1`,
+        [dragonId],
+        (error, response) => {
+          try {
+            if (error) reject(error);
+            if (!response.rows.length) reject(new Error("no dragon trait"));
+            resolve(response.rows);
+          } catch (error) {
+            reject(error);
+          }
+        }
+      );
+    });
+  }
 }
+
+// DragonTraitTable.getDragonTrait({ dragonId: 1 })
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
 
 // DragonTraitTable.storeDragonTrait({
 //   traitType: "backgroundColor",
